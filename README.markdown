@@ -23,7 +23,7 @@ Please follow these steps:
 - 6.) This file is a static C library file to be included via the provided header.
 
 To understand how to use the APIs this library provides, please view the
-provided documentation [here](htps://alyxshang.github.io/libshangshield).
+provided documentation [here](https://alyxshang.github.io/libshangshield).
 
 ## CHANGELOG :black_nib:
 
