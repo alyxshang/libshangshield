@@ -1,0 +1,34 @@
+on: [push]
+name: LibShangshield CI
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: "Install Doxygen."
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen
+          
+      - name: "Build the library."
+        run: |
+          make build
+          make archive
+
+      - name: "Build the tests and run them."
+        run: |
+          make test
+          make run_tests
+
+      - name: "Generate documentation."
+        run: make docs
+
+      - name: "Deploy the built documentation."
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          branch: gh-pages
+          folder: docs/html

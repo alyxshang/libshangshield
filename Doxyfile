@@ -1,0 +1,12 @@
+DOXYFILE_ENCODING      = UTF-8
+PROJECT_NAME           = "LibShangshield"
+PROJECT_NUMBER         = "0.1.0"
+PROJECT_BRIEF          = "A C library to measure the security of your passwords."
+OUTPUT_DIRECTORY       = "docs"
+CREATE_SUBDIRS         = YES
+EXTRACT_ALL            = YES
+FILE_PATTERNS          = *.h
+INPUT                  = src/libshangshield.h
+RECURSIVE              = YES
+EXCLUDE                = README.markdown
+
